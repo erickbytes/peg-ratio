@@ -10,7 +10,8 @@ def peg_ratio(ticker):
     current share price by its most recent reported earnings per share (EPS)."""
     stock_info = yf.Ticker(ticker).info
     pe_ratio = stock_info["trailingPE"]
-    eptss_growth_rate = stock_info["earningsQuarterlyGrowth"]
+    eps_growth_rate = stock_info["earningsQuarterlyGrowth"]
+    # peg_ratio = pe_ratio / eps_growth_rate
     peg_ratio = stock_info["pegRatio"]
     print(f"PE: {pe_ratio}\nEPS Growth: {eps_growth_rate}")
     return peg_ratio
